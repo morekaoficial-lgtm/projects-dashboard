@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
+  <script>
+    // Protección básica (Advertencia: Insegura contra desarrolladores)
+    const accessPassword = "tu_contraseña_aqui";
+    const userAttempt = prompt("Acceso restringido. Introduce la contraseña para el entorno Kimi Claw:");
+    
+    if (userAttempt !== accessPassword) {
+      // Borra todo el contenido de la página si la contraseña es incorrecta
+      document.documentElement.innerHTML = '<body style="background-color: #030712; color: #ef4444; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;"><h2>Acceso Denegado.</h2></body>';
+      throw new Error("Acceso denegado"); // Detiene la ejecución de otros scripts
+    }
+  </script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
